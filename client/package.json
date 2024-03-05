@@ -1,0 +1,44 @@
+{
+  "name": "livvy",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.24.0",
+    "@react-google-maps/api": "^2.19.3",
+    "bingmaps-react": "^1.2.10",
+    "core-js": "^3.36.0",
+    "dot-env": "^0.0.1",
+    "dotenv": "^16.4.5",
+    "google-maps-react": "^2.0.6",
+    "leaflet": "^1.9.4",
+    "mqtt": "^5.3.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
+    "react-leaflet-cluster": "^2.1.0",
+    "react-router-dom": "^6.18.0",
+    "react-toastify": "^10.0.4",
+    "recharts": "^2.12.2",
+    "socket.io-client": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "vite": "^4.4.5"
+  }
+}
