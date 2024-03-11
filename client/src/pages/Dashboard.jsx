@@ -6,7 +6,6 @@ import { io } from "socket.io-client";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Analysis from '../components/Analysis';
-// import mqtt from 'mqtt';
 
 
 function Dashboard() {
@@ -16,8 +15,6 @@ function Dashboard() {
     const [socket, setSocket] = useState(null);
     const [messages, setMessages] = useState([]);
     const [render, setRender] = useState(Date.now());
-    
-
 
     const notifySuccess = () => toast.success('Success!', { autoClose: 5000 });
     const notifyError = () => toast.error('🔥 Peringatan Kebakaran!', { autoClose: 5000 });

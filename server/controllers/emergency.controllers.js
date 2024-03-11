@@ -2,6 +2,8 @@ const {MongoClient, ObjectId} = require('mongodb');
 const {client} = require('../models');
 
 async function createEmergency (req, res) {
+    
+    req.body.sensorId = new ObjectId(req.body.sensorId)
     console.log(req.body);
     const result = await client.db("baru").collection("collection_emergencies").insertOne(req.body);
     res.send("new document created with id" + result.insertedId);
@@ -55,6 +57,7 @@ async function deleteEmergency(req, res){
 }
 
 async function updateEmergency(req, res){
+    req.body.sensorId = new ObjectId(req.body.sensorId)
     const id = String(req.params.id);
     const filter = {"_id": new ObjectId(id)};
     const result = await client.db("baru").collection("collection_emergencies").updateOne(

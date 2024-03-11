@@ -43,9 +43,6 @@ onClose = props => {
     return (
       <>
 
-
-
-
       <div className='map-container'>
         <Map
         google={this.props.google}

@@ -2,6 +2,7 @@ const {MongoClient, ObjectId} = require('mongodb');
 const {client} = require('../models');
 
 async function createUser (req, res) {
+
     try {        
         // console.log('lklkl');
         const result = await client.db("baru").collection("collection_user").insertOne(req.body);

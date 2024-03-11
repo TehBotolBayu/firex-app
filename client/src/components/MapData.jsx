@@ -26,14 +26,16 @@ export class MapContainer extends Component {
     showingInfoWindow: true
   });
 
-onClose = props => {
-  if (this.state.showingInfoWindow) {
-    this.setState({
-      showingInfoWindow: false,
-      activeMarker: null
-    });
-  }
-};
+  onClose = props => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  };
+
+  // console.log('tes')
 
   render() {
     return (
@@ -72,5 +74,6 @@ onClose = props => {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBE78WkXrA-N9FGzYHPajlh0NutTeCxaJg'
+  // apiKey: 'AIzaSyBE78WkXrA-N9FGzYHPajlh0NutTeCxaJg'
+  apiKey: import.meta.env.VITE_API_KEY
 })(MapContainer);
