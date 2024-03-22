@@ -7,7 +7,7 @@ const jsonParser = bodyParser.json()
 // create application/x-www-form-urlencoded parser
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-router.post('', jsonParser, controller.createUser);
+// router.post('', jsonParser, controller.createUser);
 router.get('/:id', controller.findUser);
 router.get('/', controller.findUsers);
 router.put('/:id', jsonParser, controller.updateUser);

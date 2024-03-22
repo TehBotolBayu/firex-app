@@ -14,27 +14,6 @@ async function createSensor (req, res) {
     }
 }
 
-/*
-{
-   $lookup:
-     {
-       from: <collection to join>,
-       localField: <field from the input documents>,
-       foreignField: <field from the documents of the "from" collection>,
-       as: <output array field>
-     }
-}
-*/
-// async function sensorUser(req, res){
-//     const list = await result.toArray();
-//     if(result) {
-//         res.status(200).json({
-//             data: list
-//         })
-//     } else {
-//         res.send("data not found");
-//     }
-// }
 
 async function getSensorUser(req, res) {
     try {

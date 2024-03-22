@@ -7,7 +7,7 @@ const notifyDelete = () => toast.success('Berhasil menghapus data!', { autoClose
 
 function Devices() {
     const [load, setload] = useState(true);
-    const [sensor, setSensor] = useState(undefined);
+    const [sensor, setSensor] = useState([]);
 
     const [userID, setuserID] = useState(undefined);
     const [lon, setlon] = useState(undefined);
@@ -23,8 +23,9 @@ function Devices() {
                 throw new Error('Failed to fetch data');
               }
               const jsonData = await response.json();
-              setSensor(jsonData.data);
-  
+              setSensor([...jsonData.data]);
+              // console.log(jsonData.data[0].sensor_user[0].name);
+              // console.log(sensor[0].sensor_user[0].name);
               setload(false)
             } catch (error) {
               console.log(error);
@@ -71,8 +72,8 @@ function Devices() {
         <button className='p-4 bg-primary text-white mb-[-2rem] mt-4' onClick={() => addDevice()}>Daftarkan Perangkat</button>
         {
             (load)? <h1>load</h1>:
-            <table >
-            <thead>
+            <table>
+              <thead>
                 <tr>
                     <th>#</th>
                     <th>Nama Pemilik</th>
@@ -83,29 +84,29 @@ function Devices() {
                     <th>lokasi instalasi</th>
                     <th></th>
                 </tr>
-            </thead>
-        {
-            sensor.map((e, i) => {
-                return(
-                    <tbody key={i}>
-                        <tr>
-                            <td>{i}</td>
-                            <td>{e.sensor_user[0].name}</td>
-                            <td>{e.sensor_user[0].email}</td>
-                            <td>{e.longitude}</td>
-                            <td>{e.latitude}</td>
-                            <td>{e.type}</td>
-                            <td>{e.lokasi}</td>
-                            <td className='flex justify-evenly h-full items-center'>
-                              <button onClick={() => deletedata(e._id)} className='mx-1 px-4 py-1 bg-red-500 text-white'>Hapus</button>
-                              <button onClick={() => editdata(i)} className='mx-1 px-4 py-1 bg-blue-500 text-white'>Edit</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                )
-            })
-        }
-        </table>
+              </thead>
+              {
+                  sensor.map((e, i) => {
+                      return(
+                          <tbody key={i}>
+                              <tr>
+                                  <td>{i}</td>
+                                  <td>{e.sensor_user[0].name}</td>
+                                  <td>{e.sensor_user[0].email}</td>
+                                  <td>{e.longitude}</td>
+                                  <td>{e.latitude}</td>
+                                  <td>{e.type}</td>
+                                  <td>{e.lokasi}</td>
+                                  <td className='flex justify-evenly h-full items-center'>
+                                    <button onClick={() => deletedata(e._id)} className='mx-1 px-4 py-1 bg-red-500 text-white'>Hapus</button>
+                                    <button onClick={() => editdata(i)} className='mx-1 px-4 py-1 bg-blue-500 text-white'>Edit</button>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      )
+                  })
+              }
+            </table>
         }
         {
             (form)?

@@ -1,20 +1,6 @@
 const {MongoClient, ObjectId} = require('mongodb');
 const {client} = require('../models');
 
-async function createUser (req, res) {
-
-    try {        
-        // console.log('lklkl');
-        const result = await client.db("baru").collection("collection_user").insertOne(req.body);
-        return res.status(200).json({data: String(result.insertedId)});
-        
-    } catch (error) {
-        return res.status(400).json({
-            message: error
-        })
-    }
-}
-
 async function findUser(req, res){
     console.log(req.params.id);
     const id = String(req.params.id);
@@ -27,7 +13,7 @@ async function findUser(req, res){
         });
     }
     const result = await client.db("baru").collection("collection_user").find({"_id" : idEncoded})
-    const list = await result.limit(5).toArray();
+    const list = await result.toArray();
     if(result) {
         res.status(200).json({
             data: list
@@ -77,4 +63,4 @@ async function updateUser(req, res){
     }
 }
 
-module.exports = {createUser, findUser, findUsers, deleteUser, updateUser};
+module.exports = {findUser, findUsers, deleteUser, updateUser};

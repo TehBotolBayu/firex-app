@@ -6,9 +6,11 @@ import { io } from "socket.io-client";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Analysis from '../components/Analysis';
+import Login from './Login';
 
 
-function Dashboard() {
+
+function Dashboard({user}) {
   
     const [page, setPage] = useState('profiles')
     const [mock, setMock] = useState(undefined);
@@ -22,7 +24,7 @@ function Dashboard() {
     const renderPage = (page) => {
         if(page === "profiles"){
             return (
-                <Profiles/>
+                <Profiles id={user.data.id}/>
             )
         } else if(page === "emergencies"){
             return (
@@ -36,7 +38,10 @@ function Dashboard() {
           return (
               <Analysis />
           )
-      }
+        }else if(page == "login"){
+          localStorage.removeItem('loginToken');
+          window.open('/', '_self');
+        }
     }
 
     const postEmergency = async (newdata) => {
@@ -95,6 +100,7 @@ function Dashboard() {
                 <li onClick={() => setPage('emergencies')}>Emergency</li>
                 <li onClick={() => setPage('devices')}>Devices</li>
                 <li onClick={() => setPage('a')}>Red Area</li>
+                <li onClick={() => setPage('login')}>Log Out</li>
             </ul>
         </nav>
         <aside className='content-data'>
