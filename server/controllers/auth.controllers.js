@@ -146,17 +146,17 @@ async function changePassword(req, res) {
   try {
     const {id, newPassword} = req.body;
     const encryptedPassword = await hashPassword(newPassword);
-    const idObject = new ObjectId(id);
+    const idObject = new ObjectId(String(id));
     const result = await client.db("baru").collection("collection_user").find({"_id" : idObject});
     let data = await result.toArray();
     data[0].password = await encryptedPassword;
-    console.log(data[0]);
-    // return res.status(400);
-    const resultUpdate = await client.db("baru").collection("collection_emergencies").updateOne(
+    const resultUpdate = await client.db("baru").collection("collection_user").updateOne(
         {"_id": idObject},
         {$set: data[0]},
         {upsert: true}
     );
+
+    console.log(resultUpdate);
     if(resultUpdate.upsertedCount > 0){
         // res.send("new document has been inserted with id "+resultUpdate.upsertedId._id);
         return res.status(200).json({
@@ -191,4 +191,32 @@ async function expireToken(req, res) {
   }
 }
 
-module.exports = {login, register, validateToken, expireToken, activate, changePassword}
+async function hash(req, res) {
+  try{
+    const hashed = await hashPassword(req.body.password);
+    return res.status(200).json({
+      data: hashed
+    })
+  } catch (error) {
+    console.log(error.message);
+    return res.status(400).json({
+      message: error.message
+    })
+  }
+}
+
+async function compare(req, res) {
+  try{
+    const same = await comparePassword(req.body.password, req.body.hash);
+    return res.status(200).json({
+      data: same
+    })
+  } catch (error) {
+    console.log(error.message);
+    return res.status(400).json({
+      message: error.message
+    })
+  }
+}
+
+module.exports = {login, register, validateToken, expireToken, activate, changePassword, hash, compare}

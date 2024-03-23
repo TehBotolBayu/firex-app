@@ -57,9 +57,9 @@ async function updateUser(req, res){
         {upsert: true}
     );
     if(result.upsertedCount > 0){
-        res.send("new document has been inserted with id "+result.upsertedId._id);
+        res.status(200).json({message:"new user has been inserted with id "+result.upsertedId._id});
     } else {
-        res.send(result.modifiedCount+" documents was updated");
+        res.status(200).json({message:result.modifiedCount+" user was updated"});
     }
 }
 

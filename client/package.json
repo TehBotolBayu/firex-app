@@ -12,6 +12,7 @@
   "dependencies": {
     "@babel/runtime-corejs3": "^7.24.0",
     "@react-google-maps/api": "^2.19.3",
+    "bcrypt": "^5.1.1",
     "bingmaps-react": "^1.2.10",
     "core-js": "^3.36.0",
     "dot-env": "^0.0.1",

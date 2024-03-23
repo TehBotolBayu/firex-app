@@ -6,11 +6,22 @@
   .card{
     @apply bg-gray-300 my-5
   }
+  .selection{
+	@apply py-3 mb-[-2rem] mt-4
+	w-fit rounded-2xl px-8 cursor-pointer shadow-lg
+  }
+  .btn{
+	@apply py-3 bg-primary text-white mb-[-2rem] mt-4
+	w-fit rounded-2xl px-8 cursor-pointer 
+  }
+  .btn:hover{
+	@apply filter brightness-[0.7]
+  }
   .list{
-	@apply mx-5 mt-4
+	@apply  mt-4
   }
   .list-content{
-    @apply my-5 cursor-pointer border-b border-y-gray-500 w-[350px]
+    @apply  cursor-pointer border-b border-y-gray-500 w-[350px] p-4
   }
   .sidebar{
     @apply bg-primary p-10 min-h-screen max-h-screen text-white text-2xl
@@ -30,13 +41,13 @@
 	@apply bg-white
   }
   .detail{
-	@apply bg-white mx-2 w-full
+	@apply bg-white mx-2 w-full h-screen sticky top-0
   }
   .detail-info{
 	@apply flex 
   }
   .card{
-	@apply w-full mx-4 bg-white shadow-2xl rounded-md p-5
+	@apply w-full  bg-white shadow-2xl rounded-md p-5
   }
   .form{
 	@apply bg-white absolute p-10 top-[50vh] left-[50vw] -translate-x-[50%]

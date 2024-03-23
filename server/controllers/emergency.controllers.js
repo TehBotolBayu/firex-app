@@ -66,10 +66,11 @@ async function updateEmergency(req, res){
         {upsert: true}
     );
     if(result.upsertedCount > 0){
-        res.send("new document has been inserted with id "+result.upsertedId._id);
-    } else {
-        res.send(result.modifiedCount+" documents was updated");
+        return res.status(200).json({message:"Emergency has been inserted with id "+result.upsertedId._id});
+    } else if(result.upsertedCount == 0) {
+        return res.status(200).json({message:"Emergeny was updated"});
     }
+    return res.status(400).json({message: "failed to update data"})
 }
 
 module.exports = {createEmergency, findEmergency, findEmergencies, deleteEmergency, updateEmergency};

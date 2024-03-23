@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import DashboardList from './DashboardList';
 import Detail from './Detail';
 
@@ -6,6 +6,7 @@ function Emergencies({isRender}) {
     const [emergency, setEmergency] = useState(undefined);
     const [ID, setID] = useState(0);
     const [loading, setLoading] = useState(true);
+    const [reRender, setreRender] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,8 +27,7 @@ function Emergencies({isRender}) {
           }
         };
         fetchData();
-      }, [isRender]);
-
+      }, [isRender, reRender]);
     
     return (
         <>
@@ -42,6 +42,7 @@ function Emergencies({isRender}) {
                 />
             </div>
             <Detail
+            reRender={setreRender}
             emergency={emergency[ID]}
             emergencies={emergency}
             />

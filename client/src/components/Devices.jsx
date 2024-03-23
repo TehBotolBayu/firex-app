@@ -69,7 +69,7 @@ function Devices() {
   return (
 
     <div>
-        <button className='p-4 bg-primary text-white mb-[-2rem] mt-4' onClick={() => addDevice()}>Daftarkan Perangkat</button>
+        <button className='btn' onClick={() => addDevice()}>Daftarkan Perangkat</button>
         {
             (load)? <h1>load</h1>:
             <table>

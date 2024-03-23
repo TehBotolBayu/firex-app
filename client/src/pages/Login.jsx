@@ -77,7 +77,8 @@ const Login = () => {
       })
       const res = await response.json();
       if (!response.ok) {
-        notifyError(res.message)
+        notifyError("Unable to connect")
+        console.log(res.message);
         throw new Error('Failed to create post');
       }
       if (res.message == "data has modified"){

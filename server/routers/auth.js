@@ -15,6 +15,8 @@ router.post('/activate', jsonParser, controller.activate);
 router.post('/register', jsonParser, controller.register);
 router.post('/validate', jsonParser, controller.validateToken);
 router.post('/changepw', jsonParser, controller.changePassword);
+router.post('/hash', jsonParser, controller.hash);
+router.post('/compare', jsonParser, controller.compare);
 // router.get('/:id', controller.findEmergency);
 // router.get('/', controller.findEmergencies);
 // router.put('/:id', jsonParser, controller.updateEmergency);
