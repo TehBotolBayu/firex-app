@@ -1,0 +1,42 @@
+export const dataPeringatan = [
+    {
+        title: "Terjadi kebakaran didekat rumah anda",
+        timeststamp: "2024-02-20 14:30:00",
+        username: "M. Rahman",
+        birthday: "11 Januari 2002",
+        gender: "Laki - Laki",
+        address: "Jl Perjuangan, Samarinda ulu",
+        temperature: 28,
+        smoke: 30,
+        gas: 12,
+        longitude: "117.0986521661533",
+        latitude: "-0.4682024822491977" ,
+         
+    },
+    {
+        title: "Terjadi kebakaran didekat rumah anda",
+        timeststamp: "2024-02-20 14:30:00",
+        username: "Udin Petot",
+        birthday: "11 Januari 2002",
+        gender: "Laki - Laki",
+        address: "Lamubung, biawan",
+        temperature: 1,
+        smoke: 1,
+        gas: 1,
+        longitude: "106.82633166285429",
+        latitude: "-6.174806255308602", 
+    },
+    {
+        title: "Terjadi kebakaran didekat rumah anda",
+        timeststamp: "2024-02-20 14:30:00",
+        username: "Pemkot",
+        birthday: "11 Januari 1950",
+        gender: "Laki - Laki",
+        address: "Jembatan Mahakam",
+        temperature: 12121,
+        smoke: 123123,
+        gas: 4345345,
+        longitude: "105.29915822462027", 
+        latitude: "-5.129187602041385", 
+    }
+] 
