@@ -66,8 +66,7 @@ async function register (req, res) {
 
 async function login(req, res) {
     const {email, password} = req.body;
-    // console.log('teS')
-    console.log(email+password);
+    // console.log(email+password)
     const result = await client.db("baru").collection("collection_user").find({"email" : email})
     const list = await result.toArray();
     if(list.length > 0) {
@@ -89,11 +88,15 @@ async function login(req, res) {
                 role,
               });
         } else {
+      console.log('passw')
+
             res.status(400).json({
                 message: "wrong password",
             })
         }
     } else {
+      console.log('email not register')
+
         res.status(404).json({
             message: "email not yet registered",
         })

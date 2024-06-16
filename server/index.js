@@ -31,6 +31,7 @@ io.on('connect', (socket)=>{
 
 // MQTT broker 
 const mqttBrokerUrl = 'mqtt://broker.emqx.io'; 
+// const mqttBrokerUrl = 'mqtt://broker.hivemq.com'; 
 const mqttTopic = 'firex/asap'; 
 
 // Create MQTT client

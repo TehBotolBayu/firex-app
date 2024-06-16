@@ -37,3 +37,7 @@ input:checked.defaultCheckbox::before {
 		@apply border 
 	  }
 }
+
+.bgauth {
+	background: linear-gradient(135deg, #809ef1, #5100ff);
+}

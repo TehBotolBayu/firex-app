@@ -197,7 +197,7 @@ const Login = () => {
         position='top-left'
         onClick={() => setPage('emergencies')}
         />
-    <div className="bg-brand-500 min-h-screen w-[50vw] flex justify-center items-center font-bold text-2xl">
+    <div className="bgauth min-h-screen w-[50vw] flex justify-center items-center font-bold text-2xl" >
       <img src={logo} width={200}/>
     </div>
     {

@@ -91,5 +91,6 @@ onClose = props => {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBE78WkXrA-N9FGzYHPajlh0NutTeCxaJg'
+  // apiKey: 'AIzaSyBE78WkXrA-N9FGzYHPajlh0NutTeCxaJg'
+  apiKey: import.meta.env.VITE_API_KEY
 })(MapContainer);
