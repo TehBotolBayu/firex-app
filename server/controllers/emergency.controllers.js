@@ -1,8 +1,7 @@
 const {MongoClient, ObjectId} = require('mongodb');
-const {client} = require('../models');
+const {client, main} = require('../models');
 
 async function createEmergency (req, res) {
-    
     req.body.sensorId = new ObjectId(req.body.sensorId)
     console.log(req.body);
     const result = await client.db("baru").collection("collection_emergencies").insertOne(req.body);

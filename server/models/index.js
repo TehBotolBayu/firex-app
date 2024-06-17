@@ -1,11 +1,14 @@
-const {MongoClient} = require('mongodb')
+const {MongoClient} = require('mongodb');
+require("dotenv").config();
 
-const uri = "mongodb://127.0.0.1:27017/baru";
+const uri = process.env.DATABASE_URL;
 const client = new MongoClient(uri);
 
 async function main() {
     try {
-        await client.connect();
+        const res = await client.connect();
+        if(res)
+        console.log('connected to database');
     } catch(error){
         console.error(error);
     }

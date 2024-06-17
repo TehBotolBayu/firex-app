@@ -25,6 +25,7 @@ async function getSensorUser(req, res) {
             as: 'sensor_user'
         }}]);
         const list = await data.toArray();
+        console.log(list);
         res.status(200).json({
             data : list
         })
