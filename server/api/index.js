@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const routers = require('../routers');
 const cors = require('cors');
-const {main} = require("./models")
+const {main} = require("../models")
 
 main();
 
