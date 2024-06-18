@@ -65,7 +65,7 @@ const Tables = () => {
       const fetchData = async () => {
       setloadmap(true)
         try {
-          const response = await fetch('http://localhost:3300/v1/emergency');
+          const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/emergency`);
           if (!response.ok) {
             throw new Error('Failed to fetch data');
           }
@@ -87,7 +87,7 @@ const Tables = () => {
       setload(true)
 
         try {
-          const response = await fetch('http://localhost:3300/v1/sensor/withuser');
+          const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/sensor/withuser`);
           if (!response.ok) {
             throw new Error('Failed to fetch data');
           }
@@ -108,7 +108,7 @@ const Tables = () => {
     const fetchSensor = async () => {
       setload2(true)
       try {
-        const response = await fetch('http://localhost:3300/v1/user');
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/user`);
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
@@ -162,7 +162,7 @@ const Tables = () => {
   const deletedata = async (id, title) => {
     if (title == "Sensor"){
       try {
-        const response = await fetch(`http://localhost:3300/v1/sensor/${id}`, {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/sensor/${id}`, {
             method: 'DELETE'
         });
         if (!response.ok) {
@@ -176,7 +176,7 @@ const Tables = () => {
       }
     } else if(title == "User") {
       try {
-        const response = await fetch(`http://localhost:3300/v1/user/${id}`, {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/user/${id}`, {
             method: 'DELETE'
         });
         if (!response.ok) {
@@ -265,7 +265,7 @@ const handleFormSensor = (uid, mode) => {
     setMode("add")
     
     try {
-        const response = await fetch(`http://localhost:3300/v1/sensor/${sensorUser[id]._id}`, {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/sensor/${sensorUser[id]._id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
@@ -296,7 +296,7 @@ const handleFormSensor = (uid, mode) => {
     }
     
     try {
-        const response = await fetch('http://localhost:3300/v1/sensor/', {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/sensor/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -328,7 +328,7 @@ const handleFormSensor = (uid, mode) => {
     }
     
     try {
-        const response = await fetch('http://localhost:3300/v1/user/', {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/user/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

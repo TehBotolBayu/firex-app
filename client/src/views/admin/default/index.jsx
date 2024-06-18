@@ -26,7 +26,7 @@ const Dashboard = () => {
     const fetchData = async () => {
     setLoading(true)
       try {
-        const response = await fetch('http://localhost:3300/v1/emergency/detail');
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/emergency/detail`);
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
@@ -51,7 +51,7 @@ const Dashboard = () => {
     console.log(updata);
     
     try {
-        const result = await fetch(`http://localhost:3300/v1/emergency/${_id}`, {
+        const result = await fetch(`${import.meta.env.VITE_BASE_URL}v1/emergency/${_id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'

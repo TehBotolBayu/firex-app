@@ -50,7 +50,7 @@ const ProfileOverview = () => {
   useEffect(() => {
     const userfetch = async () => {
       try {        
-        const result = await fetch(`http://localhost:3300/v1/user/${user.data.id}`)
+        const result = await fetch(`${import.meta.env.VITE_BASE_URL}v1/user/${user.data.id}`)
         if (!result.ok) {
           throw new Error('Failed to get data');
         }
@@ -80,7 +80,7 @@ const ProfileOverview = () => {
           try {
         setload(false)
 
-            const response = await fetch(`http://localhost:3300/v1/sensor/user/${user.data.id}`);
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/sensor/user/${user.data.id}`);
             if (!response.ok) {
               throw new Error('Failed to fetch data');
             }
@@ -126,7 +126,7 @@ const ProfileOverview = () => {
     }
     
     try {
-      const result = await fetch(`http://localhost:3300/v1/user/${user.data.id}`, {
+      const result = await fetch(`${import.meta.env.VITE_BASE_URL}v1/user/${user.data.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -154,7 +154,7 @@ const ProfileOverview = () => {
         password: pwpw.curr,
         hash: userData.data[0].password
       }
-      const response = await fetch('http://localhost:3300/v1/auth/compare', {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/auth/compare`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -164,7 +164,7 @@ const ProfileOverview = () => {
       const updata = {
         password: pwpw.new
       }
-      const reshash = await fetch('http://localhost:3300/v1/auth/hash', {
+      const reshash = await fetch(`${import.meta.env.VITE_BASE_URL}v1/auth/hash`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

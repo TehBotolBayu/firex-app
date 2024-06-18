@@ -33,7 +33,7 @@ const Login = () => {
       password
     }
     try {
-      const response = await fetch('http://localhost:3300/v1/auth/activate/', {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/auth/activate/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -68,7 +68,7 @@ const Login = () => {
       newPassword: newpassword
     }
     try {
-      const response = await fetch('http://localhost:3300/v1/auth/changepw/', {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/auth/changepw/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -99,7 +99,7 @@ const Login = () => {
       password
     }
     try {
-        const response = await fetch('http://localhost:3300/v1/auth/login/', {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/auth/login/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

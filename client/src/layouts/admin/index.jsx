@@ -41,7 +41,7 @@ export function Admin(props) {
     const isValid = async () => {
       // notifySuccess();
       try {
-        const result = await fetch('http://localhost:3300/v1/auth/validate', {
+        const result = await fetch(`${import.meta.env.VITE_BASE_URL}v1/auth/validate`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -116,7 +116,7 @@ export function Admin(props) {
       let object = JSON.parse(jsonString);
       object = {...object, timestamp:getCurrentDate() } 
       try {
-          const response = await fetch('http://localhost:3300/v1/emergency', {
+          const response = await fetch(`${import.meta.env.VITE_BASE_URL}v1/emergency`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -137,7 +137,7 @@ export function Admin(props) {
   }
 
   useEffect(() => {
-      const newSocket = io('http://localhost:3300'); // Replace with your Socket.IO server URL
+      const newSocket = io(import.meta.env.VITE_BASE_URL); // Replace with your Socket.IO server URL
       setSocket(newSocket);
       // Event listener for receiving messages
       newSocket.on('message', (message) => {
