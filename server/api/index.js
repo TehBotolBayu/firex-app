@@ -9,9 +9,14 @@ main();
 
 app.use(cors());
 app.use('/v1', routers)
-
+app.get('*', (req, res)=>{
+    return res.json({
+        message: "Endpoint is not registered"
+    })
+})
 
 const http = require('http').Server(app); 
+
 const io = require('socket.io')(http, {
     cors: {
         origin: "*"
