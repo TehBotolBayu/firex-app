@@ -1,8 +1,11 @@
 const mqtt = require('mqtt');
 const express = require('express');
 const app = express();
-const routers = require('./routers');
+const routers = require('../routers');
 const cors = require('cors');
+const {main} = require("./models")
+
+main();
 
 app.use(cors());
 app.use('/v1', routers)

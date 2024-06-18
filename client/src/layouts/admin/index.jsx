@@ -7,6 +7,7 @@ import routes from "../../routes.jsx";
 import { io } from "socket.io-client";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 // import { UserContext } from "../../App.jsx";
 
 // import React, {useState, useEffect, useContext, createContext} from 'react';
@@ -27,7 +28,7 @@ export function Admin(props) {
   const notifySuccess = () => toast.success('Success!', { autoClose: 5000 });
   const notifyError = () => toast.error('🔥 Peringatan Kebakaran!', { autoClose: 5000 });
   const notify = () => toast("Wow so easy!");
-
+  const navigate = useNavigate();
 
   const [isLogin, setisLogin] = useState()
   const [user, setuser] = useState({})
@@ -49,6 +50,7 @@ export function Admin(props) {
         })
         const resdata = await result.json();
         if (!result.ok) {
+          navigate('/auth/sign-in')
           throw new Error(resdata.message);
         }
         if(resdata.message == "valid token"){
