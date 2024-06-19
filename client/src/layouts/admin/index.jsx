@@ -26,7 +26,7 @@ export function Admin(props) {
   const [render, setRender] = useState(Date.now());
 
   const notifySuccess = () => toast.success('Success!', { autoClose: 5000 });
-  const notifyError = () => toast.error('🔥 Peringatan Kebakaran!', { autoClose: 5000 });
+  const notifyError = (message) => toast.error(message||'🔥 Peringatan Kebakaran!', { autoClose: 5000 });
   const notify = () => toast("Wow so easy!");
   const navigate = useNavigate();
 
@@ -63,7 +63,7 @@ export function Admin(props) {
         console.log(error.message);
       }
     }
-    notifyError();
+    notifyError("your session has ended");
     isValid();
   }, [])
   
@@ -127,8 +127,8 @@ export function Admin(props) {
           if (!response.ok) {
             throw new Error('Failed to create post');
           }
-          // const data = await response.json();
-          console.log('New post:', newdata);
+          // const newdata = await response.json();
+          // console.log('New post:', response);
           notifyError();
           setRender(Date.now())
         } catch (error) {

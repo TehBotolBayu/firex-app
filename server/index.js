@@ -1,10 +1,10 @@
 const mqtt = require('mqtt');
 const express = require('express');
 const app = express();
-const routers = require('../routers');
+const routers = require('./routers');
 const cors = require('cors');
 require('dotenv').config();
-const {main} = require("../models")
+const {main} = require("./models")
 
 app.use(cors());
 app.use('/v1', routers)
