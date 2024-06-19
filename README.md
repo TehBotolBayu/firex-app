@@ -1,5 +1,9 @@
 # Fire X
 
+
+https://github.com/TehBotolBayu/firex-app/assets/106162714/a2704a12-78cc-4cc6-8503-884d2470baba
+
+
 ## _Sistem Informasi Penanggulangan Bencana Kebakaran Berbasis IoT_
 
  FireX merupakan sistem informasi penanggulangan bencana yang bertujuan untuk meringankan beban kerja dari pemadam kebakaran. Website ini bekerja dengan membaca data dari alat IoT yang terpasang pada rumah dan akan mengirimkan lokasi kebakaran jika alat tersebut mendeteksi tanda tanda kebakaran. 
