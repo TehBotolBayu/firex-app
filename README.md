@@ -1,8 +1,9 @@
 # Fire X
 
+username: tes
+password: tes
 
 https://github.com/TehBotolBayu/firex-app/assets/106162714/a2704a12-78cc-4cc6-8503-884d2470baba
-
 
 ## _Sistem Informasi Penanggulangan Bencana Kebakaran Berbasis IoT_
 
