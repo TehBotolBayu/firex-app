@@ -1,14 +1,9 @@
 import {
   columnsDataColumns, columnsDataSensorUser, columnsDataUserAdmin
 } from "./variables/columnsData";
-import tableDataColumns from "./variables/tableDataColumns.json";
 import ColumnsTable from "./components/ColumnsTable";
-import MapData from "../../../components/MapData";
-import DailyTraffic from "../../admin/default/components/DailyTraffic";
-import PieChartCard from "../../admin/default/components/PieChartCard";
 import { useEffect, useState } from "react";
 import Card from "../../../components/card";
-import Form from "../../../components/Form";
 import InputField from "../../../components/fields/InputField";
 import MapAnalysis from "../../../components/MapAnalysis"
 
