@@ -60,10 +60,10 @@ export function Admin(props) {
         }
         setisLogin(false);
       } catch (error) {
+    notifyError("your session has ended");
         console.log(error.message);
       }
     }
-    notifyError("your session has ended");
     isValid();
   }, [])
   
